@@ -1,8 +1,24 @@
 import db from './db';
-import { Player, UpdateablePlayer } from '../types/player';
+import { Player, UpdateablePlayer, QueryParams } from '../types/player';
 
-const allRecords = (callback: Function) => {
-	db.query('SELECT * FROM player', (err, result) => {
+const validOrderByColumns = ['name', 'winnings', 'country', 'id'];
+
+const allRecords = (queryParams: QueryParams, callback: Function) => {
+	const { sortBy, orderBy, total, from, size } = queryParams;
+	let query = 'SELECT * FROM player';
+
+	if (sortBy && validOrderByColumns.includes(sortBy)) {
+		query = query.concat(` ORDER BY ${sortBy}`);
+		if (orderBy) { query = query.concat(` ${orderBy}`); }
+	}
+
+	if (from && (size || total)) {
+		query = query.concat(` LIMIT ${from}, ${size || total}`);
+	}
+
+	if (!from && total) { query = query.concat(` LIMIT ${total}`); }
+
+	db.query(query, (err, result) => {
 		if (err) {
 			callback(err, null);
 			return;

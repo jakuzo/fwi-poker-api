@@ -12,3 +12,11 @@ export interface UpdateablePlayer {
     name?: string,
     winnings?: number
 };
+
+export interface QueryParams {
+    from?: number,
+    size?: number,
+    total?: number,
+    sortBy?: string,
+    orderBy?: string
+};
