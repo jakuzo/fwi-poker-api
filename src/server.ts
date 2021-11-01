@@ -10,6 +10,8 @@ app.get('/', (_, res) => {
 	res.json({ message: 'fwi-poker-api' });
 });
 
+// The server must accept OPTIONS request otherwise preflight won't pass
+// and the request will be denied usually showing a cors error.
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header(
