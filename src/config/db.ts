@@ -3,8 +3,8 @@
 // But this suffices for the exercise :)
 
 export default {
-	host: 'localhost',
-	user: 'dev',
-	password: 'password',
-	database: 'fwi-poker'
+	host: process.env.NODE_ENV === 'production' ? 'localhost' : 'localhost',
+	user: process.env.NODE_ENV === 'production' ? 'dev' : 'dev',
+	password: process.env.NODE_ENV === 'production' ? 'password' : 'password',
+	database: process.env.NODE_ENV === 'production' ? 'fwi-poker' : 'fwi-poker'
 };
