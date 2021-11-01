@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 
 import { Player, UpdateablePlayer } from '../types/player';
+import { PageParams } from '../types/page';
 import PlayerModel from '../models/player';
 
 /**
@@ -8,7 +9,10 @@ import PlayerModel from '../models/player';
  * @param _
  * @param res
  */
-const index = (_: Request, res: Response): void => {
+const index = (req: Request, res: Response): void => {
+	// eslint-disable-next-line no-unused-vars
+	const pageParams: PageParams = req.query;
+
 	PlayerModel.allRecords((error: Error, data: Player[]) => {
 		if (error) {
 			res.status(500).json({ error: error.message });
