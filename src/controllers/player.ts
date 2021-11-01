@@ -17,7 +17,7 @@ const index = (req: Request, res: Response): void => {
 		if (error) {
 			res.status(500).json({ error: error.message });
 		} else {
-			res.json(data);
+			res.json({ ...pageParams, items: data });
 		}
 	});
 };
