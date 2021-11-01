@@ -1,5 +1,7 @@
 import express from 'express';
 import PlayerRouter from './routes/player';
+import swaggerJsDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 const app = express();
 
@@ -27,6 +29,33 @@ app.use((req, res, next) => {
 });
 
 app.use('/players', PlayerRouter);
+
+const options = {
+	definition: {
+		openapi: '3.0.0',
+		info: {
+			title: 'FWI Backend Poker Challenge',
+			version: '0.1.0',
+			description: 'A simple RESTful API built with Express.js, TypeScript, MySQL, and Love.',
+			license: {
+				name: 'MIT', url: 'https://spdx.org/licenses/MIT.html',
+			},
+			contact: {
+				name: 'Jack Campanella',
+			},
+		},
+		// servers: [
+		// 	{ url: 'http://localhost:3000/players', },
+		// ],
+	},
+	apis: ['**/*.ts'],
+};
+
+const spec = swaggerJsDoc(options);
+app.use('/doc',
+	swaggerUi.serve,
+	swaggerUi.setup(spec)
+)
 
 app.listen(3001, () => {
 	console.log('Listening on port 3001');
