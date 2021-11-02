@@ -28,8 +28,8 @@ At this time, the schema only contains a single table (for the sake of the exerc
 ![poker-db-schema drawio](https://user-images.githubusercontent.com/26155547/139786196-70a16e17-b7ab-47b0-b456-3835e785635c.png)
 
 
-However, if we moved toward a more normalized/optimal schema I think below would do
-
+However, if we moved toward a more normalized/optimal schema I think below would do.
+![poker-db-norm drawio](https://user-images.githubusercontent.com/26155547/139787544-a32ec78b-e659-4916-9ff4-d0e0f080c08c.png)
 
 
 ## MySQL install/configuration
