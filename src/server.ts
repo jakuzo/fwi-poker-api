@@ -44,9 +44,10 @@ const options = {
 				name: 'Jack Campanella',
 			},
 		},
-		// servers: [
-		// 	{ url: 'http://localhost:3000/players', },
-		// ],
+		servers: [
+			{ url: 'http://localhost:3001', },
+			{ url: 'http://44.225.53.153:3001', },
+		],
 	},
 	apis: ['**/*.ts'],
 };

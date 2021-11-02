@@ -3,11 +3,6 @@ import { Request, Response } from 'express';
 import { Player, UpdateablePlayer, QueryParams } from '../types/player';
 import PlayerModel from '../models/player';
 
-/**
- * TODO: DOCUMENT ME
- * @param _
- * @param res
- */
 const index = (req: Request, res: Response): void => {
 	const requestParams: QueryParams = req.query;
 
@@ -20,11 +15,6 @@ const index = (req: Request, res: Response): void => {
 	});
 };
 
-/**
- * TODO: DOCUMENT ME
- * @param req
- * @param res
- */
 const show = (req: Request, res: Response): void => {
 	const id: number = Number(req.params.id);
 	PlayerModel.singleRecord(id, (error: Error, data: Player) => {
@@ -36,11 +26,6 @@ const show = (req: Request, res: Response): void => {
 	});
 };
 
-/**
- * TODO: DOCUMENT ME
- * @param req
- * @param res
- */
 const create = (req: Request, res: Response) => {
 	const newPlayer: Player = req.body;
 	PlayerModel.create(newPlayer, (error: Error, data: Player) => {
@@ -52,12 +37,6 @@ const create = (req: Request, res: Response) => {
 	});
 };
 
-/**
- * TODO: DOCUMENT ME
- * include route: PUT: players/:id
- * @param req
- * @param res
- */
 const update = (req: Request, res: Response) => {
 	const id: number = Number(req.params.id);
 	const player: UpdateablePlayer = req.query;
@@ -71,11 +50,6 @@ const update = (req: Request, res: Response) => {
 	});
 };
 
-/**
- * TODO: DOCUMENT ME
- * @param req
- * @param res
- */
 const destroy = (req: Request, res: Response) => {
 	const id: number = Number(req.params.id);
 	PlayerModel.destroy(id, (error: Error, _: Player) => {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx ts-node-dev --poll src/server.ts",
-    "prod": "tsc && node dist/server.js",
+    "start": "tsc && node dist/server.js",
     "seed": "npx ts-node-dev src/config/seed.ts"
   },
   "keywords": [],
