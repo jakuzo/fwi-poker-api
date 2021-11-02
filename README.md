@@ -25,13 +25,17 @@ Note, this assumes that MySQL is installed and configured locally. See install s
 
 ## Database Schema / Normalization
 At this time, the schema only contains a single table (for the sake of the exercise) and only follows 1NF.
+![poker-db-schema drawio](https://user-images.githubusercontent.com/26155547/139786196-70a16e17-b7ab-47b0-b456-3835e785635c.png)
+
 
 However, if we moved toward a more normalized/optimal schema I think below would do
+
 
 
 ## MySQL install/configuration
 Note, for the sake of the exercise and brevity, some details of the configuration are not
 fully documented.
+
 
 Install mysql using homebrew
 ```sh
@@ -49,6 +53,8 @@ mysql -u root
 mysql> create database fwi-poker;
 mysql> create user 'dev'@'localhost' identified by 'dev';
 mysql> grant all on fwi-poker.* to 'dev'@'localhost';
+
+
 mysql> exit
 ```
 
