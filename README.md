@@ -22,6 +22,7 @@ Note, this assumes that MySQL is installed and configured locally. See install s
 - Could utilize node env a bit better
 - The swagger docs are pretty bare bones, they should have more information for response exmaples, model types, and so on.
 - Schema should follow beyond 1NF and thus the model interface for players should be adjusted for the necessary joins.
+- Better schema loader system.
 
 ## Database Schema / Normalization
 At this time, the schema only contains a single table (for the sake of the exercise) and only follows 1NF.
@@ -35,7 +36,6 @@ However, if we moved toward a more normalized/optimal schema I think below would
 ## MySQL install/configuration
 Note, for the sake of the exercise and brevity, some details of the configuration are not
 fully documented.
-
 
 Install mysql using homebrew
 ```sh
