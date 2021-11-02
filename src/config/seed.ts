@@ -2,9 +2,6 @@ import Data from './initialData';
 import { Player } from '../types/player';
 import PlayerModel from '../models/player';
 
-// TODO: Should delete all players first, otherwise will just
-// append and won't really be 'seeding'
-
 PlayerModel.destroyAll((err: Error) => {
 	if (err) {
 		console.log('There was a problem cleaning out existing players: ', err);
