@@ -22,11 +22,15 @@ Note, this assumes that MySQL is installed and configured locally. See install s
 - Could utilize node env a bit better
 - The swagger docs are pretty bare bones, they should have more information for response exmaples, model types, and so on.
 - Schema should follow beyond 1NF and thus the model interface for players should be adjusted for the necessary joins.
+- Better schema loader system.
 
 ## Database Schema / Normalization
 At this time, the schema only contains a single table (for the sake of the exercise) and only follows 1NF.
+![poker-db-schema drawio](https://user-images.githubusercontent.com/26155547/139786196-70a16e17-b7ab-47b0-b456-3835e785635c.png)
 
-However, if we moved toward a more normalized/optimal schema I think below would do
+
+However, if we moved toward a more normalized/optimal schema I think below would do.
+![poker-db-norm drawio](https://user-images.githubusercontent.com/26155547/139787544-a32ec78b-e659-4916-9ff4-d0e0f080c08c.png)
 
 
 ## MySQL install/configuration
@@ -49,6 +53,8 @@ mysql -u root
 mysql> create database fwi-poker;
 mysql> create user 'dev'@'localhost' identified by 'dev';
 mysql> grant all on fwi-poker.* to 'dev'@'localhost';
+
+
 mysql> exit
 ```
 
