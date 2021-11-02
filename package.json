@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=test npx ts-node-dev --poll src/server.ts",
-    "prod": "NODE_ENV=production tsc && node dist/server.js",
+    "dev": "npx ts-node-dev --poll src/server.ts",
+    "prod": "tsc && node dist/server.js",
     "seed": "npx ts-node-dev src/config/seed.ts"
   },
   "keywords": [],
