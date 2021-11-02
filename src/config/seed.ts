@@ -5,6 +5,14 @@ import PlayerModel from '../models/player';
 // TODO: Should delete all players first, otherwise will just
 // append and won't really be 'seeding'
 
+PlayerModel.destroyAll((err: Error) => {
+	if (err) {
+		console.log('There was a problem cleaning out existing players: ', err);
+	} else {
+		console.log('Removed existing players');
+	}
+});
+
 Data.players.forEach((player) => {
 	const newPlayer: Player = player;
 

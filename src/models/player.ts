@@ -97,12 +97,22 @@ const destroy = (id: number, callback: Function) => {
 	);
 };
 
-// TODO: implement a destroy all method (primarily to make seeding easier)
+const destroyAll = (callback: Function) => {
+	const query = 'DELETE FROM player';
+	db.query(query, (err, result) => {
+		if (err) {
+			callback(err, null);
+			return;
+		}
+		callback(null, result);
+	});
+};
 
 export default {
 	allRecords,
 	singleRecord,
 	create,
 	update,
-	destroy
+	destroy,
+	destroyAll
 };
