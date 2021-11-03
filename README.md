@@ -26,12 +26,12 @@ Note, this assumes that MySQL is installed and configured locally. See install s
 
 ## Database Schema / Normalization
 At this time, the schema only contains a single table (for the sake of the exercise) and only follows 1NF.
-![poker-db-schema drawio](https://user-images.githubusercontent.com/26155547/139786196-70a16e17-b7ab-47b0-b456-3835e785635c.png)
 
+![poker_db_nonorm drawio](https://user-images.githubusercontent.com/26155547/140087537-1d3982c0-64e6-42ce-b528-de1342fdb3d1.png)
 
 However, if we moved toward a more normalized/optimal schema I think below would do.
-![poker-db-norm drawio](https://user-images.githubusercontent.com/26155547/139787544-a32ec78b-e659-4916-9ff4-d0e0f080c08c.png)
 
+![poker_schema_norm drawio](https://user-images.githubusercontent.com/26155547/140087457-9c8f40d7-a8d3-4c1c-95b9-66741ea7527f.png)
 
 ## MySQL install/configuration
 Note, for the sake of the exercise and brevity, some details of the configuration are not
